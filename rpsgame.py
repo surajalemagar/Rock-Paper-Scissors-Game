@@ -24,11 +24,17 @@ def goscissors(computer_choice):
     else:
         print("\nYour choice is Scissors and Computer choice is also Scissors.\nMatch Tie!!!")
 
+def choose_option():
+    n=int(input("Enter 1 for Rock,2 for Paper and 3 for Scissors:"))
+    if n not in [1,2,3]:
+        print("\nInvalid Option!!!")
+        choose_option()
+    return n
 c='y'  
 print("Welcome To Rock Paper And Scissors Game!!!")    
 while c=='y' or c=='Y':
     print("\nYour Choice!!!")
-    player_choice=int(input("Enter 1 for Rock,2 for Paper and 3 for Scissors:"))
+    player_choice=choose_option()
     computer_choice=random.randint(1,3)
     if player_choice==1:
         gorock(computer_choice)
